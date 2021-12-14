@@ -23,10 +23,10 @@ def predict():
         f.save(os.path.join(
             app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
 
-    with open("valid", "rb") as file:
+    with open("valid.pkl", "rb") as file:
         model_check = pickle.load(file)
 
-    with open("model", "rb") as file:
+    with open("model.pkl", "rb") as file:
         model = pickle.load(file)
 
     target_image = app.config['UPLOAD_FOLDER'] + "/" + f.filename    
